@@ -110,6 +110,7 @@ function updateIssuesCount(issues) {
   issuesCountHeading.textContent = `${issues.length} issues`;
   
 }
+// modal
 
  function openModal(issue) {
       modalContent.innerHTML = `
@@ -216,5 +217,13 @@ closedBtn.addEventListener('click', () => {
   const closedIssues = issuesData.filter(i => i.status.toLowerCase() === 'closed');
   renderIssues(closedIssues);
 });
+// spinner
+
+const manageSpinner=(status)=>{
+  if(status==true){
+    document.getElementById('spinner').classList.remove('hidden')
+    document.getElementById('spinner').classList.remove('hidden')
+  }
+}
 setActiveButton(allBtn);
 fetchIssues();
