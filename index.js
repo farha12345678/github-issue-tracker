@@ -93,6 +93,7 @@ searchBtn.addEventListener('click', async () => {
 
 // issueFetch
 async function fetchIssues() {
+  manageSpinner(true)
   try {
     const res = await fetch('https://phi-lab-server.vercel.app/api/v1/lab/issues');
     const data = await res.json();
@@ -191,6 +192,7 @@ card.className = `card  h-full bg-base-100 border-t-4 ${borderColor} shadow-sm m
     issuesContainer.appendChild(card);
    
   });
+  manageSpinner(false)
 }
 
 // button 
@@ -222,7 +224,10 @@ closedBtn.addEventListener('click', () => {
 const manageSpinner=(status)=>{
   if(status==true){
     document.getElementById('spinner').classList.remove('hidden')
-    document.getElementById('spinner').classList.remove('hidden')
+    document.getElementById('card-sec').classList.add('hidden')
+  }else {
+    document.getElementById('card-sec').classList.remove('hidden')
+    document.getElementById('spinner').classList.add('hidden')
   }
 }
 setActiveButton(allBtn);
