@@ -192,7 +192,7 @@ card.className = `card  h-full bg-base-100 border-t-4 ${borderColor} shadow-sm m
   });
 }
 
-// button events
+// button 
 function setActiveButton(activeBtn) {
   [allBtn, openBtn, closedBtn].forEach(btn => {
     btn.classList.remove('bg-[#4A00FF]', 'text-white');
